@@ -8,14 +8,116 @@
     <title>Netflix Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            width: 90%;
+            margin-inline: auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            ;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .form-check-input {
+            width: 30px;
+            height: 30px;
+        }
+
+        .form-check-input:checked {
+            background-color: transparent;
+            border-color: #fff;
+        }
+    </style>
 </head>
 
-<body>
-    <!-- Title -->
+<body data-bs-theme="dark">
+    <nav class="navbar">
+        <a class="navbar-brand" href="./netflix-home.html"><img class="img-fluid me-0" src="assets/netflix_logo.png"
+                alt="netflix_logo" width="100px" style="transform: translateX(-10px);"></a>
+    </nav>
+    <main class="container mt-5">
+        <div id="Title">
+            <h1>Edit Profile</h1>
+            <hr class="mb-4">
+        </div>
+        <div class="row">
+            <!-- Colonna per l'immagine del profilo -->
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="position-relative">
+                    <img src="assets/avatar.png" alt="avatar" class="profile-image w-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                        class="bi bi-pencil-fill position-absolute bg-black rounded-circle border border-2 border-light"
+                        style="bottom: 10px; left: 10px; padding: 2px;" viewBox="0 0 16 16">
+                        <path
+                            d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+                    </svg>
+                </div>
+            </div>
 
-    <!-- Grid +  Avatar + 3 Sections -->
+            <!-- Colonna per i form e le altre opzioni -->
+            <div class="col-md-8">
+                <!-- Prima sezione -->
+                <div class="mb-3">
+                    <input type="text" class="form-control bg-secondary text-light rounded-0" id="profileName"
+                        placeholder="Strive Student" style="font-size: 18px;">
+                </div>
+                <h4 class="text-secodary opacity-75 fs-5">Language:</h4>
+                <div class="dropdown">
+                    <a class="btn border border-2 border-light bg-black text-white rounded-0 dropdown-toggle" href="#"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        English
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Italian</a></li>
+                        <li><a class="dropdown-item" href="#">Spanish</a></li>
+                        <li><a class="dropdown-item" href="#">French</a></li>
+                        <li><a class="dropdown-item" href="#">German</a></li>
+                        <li><a class="dropdown-item" href="#">Polish</a></li>
+                        <li><a class="dropdown-item" href="#">Japanese</a></li>
+                        <li><a class="dropdown-item" href="#">Chinese</a></li>
+                    </ul>
+                </div>
+                <hr class="my-4">
 
-    <!-- Footer + Actions Button -->
+                <!-- Seconda sezione -->
+                <h4 class="text-secodary opacity-75 fs-5">Maturity Settings:</h4>
+                <button class="btn btn-secondary rounded-0" style="font-weight: 600;">ALL MATURITY RATINGS</button>
+                <p class="text-secodary mt-2" style="font-size: 13px;">Show titles of all maturity ratings for this
+                    profile</p>
+                <button class="btn btn-outline-light opacity-50 rounded-0 px-4"
+                    style="letter-spacing: 2px;">EDIT</button>
+                <hr class="my-4">
+
+                <!-- Terza sezione -->
+                <h4 class="text-secodary opacity-75 fs-5">Autoplay controls</h4>
+                <label for="check01" class="form-check-label">
+                    <input type="checkbox" class="form-check-input bg-transparent rounded-0" id="check01">
+                    Autoplay next episode in a series on all devices.
+                </label>
+                <label for="check02" class="form-check-label mt-2">
+                    <input type="checkbox" class="form-check-input rounded-0" id="check02">
+                    Autoplay previews while browsing on all devices.
+                </label>
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="d-flex justify-content-md-end gap-3 mb-4">
+            <button class="btn btn-outline-light opacity-75 rounded-0 px-4" style="letter-spacing: 2px;">SAVE</button>
+            <button class="btn btn-outline-light opacity-75 rounded-0 px-4" style="letter-spacing: 2px;">CANCEL</button>
+            <button class="btn btn-outline-light opacity-75 rounded-0 px-4" style="letter-spacing: 2px;">DELETE
+                PROFILE</button>
+        </div>
+    </main>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
